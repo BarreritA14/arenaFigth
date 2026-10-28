@@ -1,0 +1,95 @@
+/* Tokens globales para color, tipografia y superficies de la aplicacion. */
+:root {
+  font-family: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  color: #192321;
+  background: #f4f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #192321;
+  --muted: #68726d;
+  --paper: #fbfcf8;
+  --canvas: #f4f5ef;
+  --line: #dce1d9;
+  --green: #c8f36b;
+  --green-dark: #37531c;
+  --coral: #f17760;
+  --blue: #b8d9e7;
+  --yellow: #f4c95d;
+  --violet: #d8c8ee;
+  --mono: "JetBrains Mono", "Cascadia Code", monospace;
+}
+
+/* Resetea tamanos y margenes para que todas las piezas compartan las reglas. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+body,
+button,
+input {
+  font-family: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+}
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input {
+  font-size: inherit;
+}
+a {
+  color: inherit;
+}
+
+/* Mantiene un indicador visible al navegar con teclado. */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 3px solid #3384a0;
+  outline-offset: 3px;
+}
+::selection {
+  color: var(--ink);
+  background: var(--green);
+}
+
+/* Oculta etiquetas visuales auxiliares sin quitarlas del arbol accesible. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respeta la preferencia del sistema por reducir el movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
